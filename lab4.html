@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<head>
+    <title>INST377 Lab 4</title>
+    <script type="text/javascript">
+       
+        function alertMe() {
+            var name = document.getElementById("name").value;
+            alert("Hello! " + name + "!");
+        }
+        var isBlue = true;
+        function changeColor() {
+            if (isBlue) {
+                document.body.style.backgroundColor = "green";
+            } else {
+                document.body.style.backgroundColor = "blue";
+            }
+            isBlue = !isBlue;  
+        }   
+        function validateText() {
+            var text = document.getElementById("textInput").value;
+            var validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            if (validationRegex.test(text)) {
+                alert("Text contains special characters!!!!");
+                return false;
+            } else {
+                alert("Text is valid!");
+                return true;
+            }
+        }
+        function addText() {
+            document.querySelector("h1").innerText += " - Add Text";
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Click Click Click!!!</h1>
+
+    
+    <div>
+        <h2>Alert Me</h2>
+        <input type="text" id="name" placeholder="Enter your name">
+        <button onclick="alertMe()">Alert Me</button>
+    </div>
+
+    
+    <div>
+        <h2>Change Color</h2>
+        <button onclick="changeColor()">Change Color</button>
+    </div>
+    <div>
+        <h2>Text Tester</h2>
+        <input type="text" id="textInput" placeholder="Enter text">
+        <button onclick="validateText()">Validate Text</button>
+    </div>
+
+    <div>
+        <h2>Add Text</h2>
+        <button onclick="addText()">Add Text</button>
+    </div>
+
+</body>
+</html>
